@@ -4,4 +4,4 @@ cd build
 
 cp index.html 200.html
 
-surge . vs-app.surge.sh
+surge . vanson-app.surge.sh
