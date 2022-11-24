@@ -1,0 +1,59 @@
+PC
+.container-fluid{
+    float: left;
+    background-color: lightblue;
+}
+.card{
+    float: left;
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 100%;
+
+}
+
+
+#card-add{
+    width: 600px;
+    background-color: lightseagreen;
+    font-weight: bold ;
+
+}
+#titlecskh{
+    padding-left: 70px;
+    font-weight: bold ;
+    font-size: large;
+}
+.form-label{
+    padding-left: 30px;
+
+}
+.form-control{
+    width: 70%;
+}
+#button{
+    height: 50px;
+    width: 30%;
+    margin: 0 auto;
+}
+
+
+
+
+/* Tablet*/
+
+@media (min-width: 740px) and (max-width: 1023px) {
+
+    .anh1{
+        width: 400px;
+        height: 350px;
+        border-radius: 50%;
+    }
+}
+/* Phone*/
+
+@media (min-width: 380px) and (max-width: 739x) {
+    .anh1{
+        width: 200px;
+        height: 150px;
+    }
+}

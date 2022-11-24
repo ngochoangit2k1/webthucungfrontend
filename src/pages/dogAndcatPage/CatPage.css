@@ -1,0 +1,27 @@
+
+.list-products {
+    border: 1px solid #0000001a;
+    color: black;
+}
+.list-group-flush li {
+    height: 50px;
+}
+
+/* Card product home */
+.card__product__home {
+    display: flex;
+    flex-wrap: wrap;
+    color: #000;
+}
+.cards__product__home img:hover {
+    transform: scale(1.04);
+    cursor: pointer;
+}
+.cards__product__home:hover {
+    transform: scale(1.04);
+    cursor: pointer;
+}
+.tc-display-none p {
+    color: #000;
+}
+

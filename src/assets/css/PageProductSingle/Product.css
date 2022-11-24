@@ -1,0 +1,231 @@
+#mt-top {
+    margin-top: 114px;
+}
+
+#product {
+    margin-bottom: 20px;
+}
+
+#product .product-title {
+    text-transform: uppercase;
+}
+
+#product .product-line {
+    width: 10%;
+    /* height: 4px; */
+    background-color: #ccc;
+    margin-top: 12px;
+    border: 1px solid #ccc;
+}
+
+#product .product-list {
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+#product .product-single {
+    padding: 20px 6px;
+
+}
+
+#product .product-img {
+    width: 50px;
+    height: 50px;
+    /* margin-top: 5px; */
+    margin-left: 20px;
+}
+
+#product .product-content {
+    color: #000;
+    font-size: 12px;
+}
+
+#product .product-price {
+    color: #000;
+    font-size: 16px;
+}
+
+#product .divider {
+    width: 90%;
+    margin-left: 14px;
+}
+
+.img-product img {
+    width: 100%;
+}
+
+.product-page-content span {
+    opacity: 0.6;
+}
+
+.product-page-content h1 {
+    color: #000;
+    font-weight: 700;
+}
+
+.product-page-content b {
+    color: #000;
+    font-weight: 700;
+    font-size: 23px;
+}
+
+.product-page-content p {
+    color: #000;
+    text-align: justify;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+.product-page-content input {
+    width: 20%;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-right: 20px;
+}
+
+.product-page-content button {
+    width: 40%;
+    background-color: palevioletred;
+
+}
+
+.product-img-news {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+}
+
+/* Tabs */
+#tabs-news {
+    margin-top: 50px;
+    margin-bottom: 20px
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css');
+
+
+#tsum-tabs h1 {
+    padding: 50px 0;
+    font-weight: 400;
+    text-align: center;
+}
+
+#tsum-tabs p {
+    margin: 0 0 20px;
+    line-height: 1.5;
+    padding: 0 10px;
+    text-align: justify;
+}
+
+#tsum-tabs main {
+    min-width: 320px;
+    max-width: 800px;
+    padding: 50px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+#tsum-tabs section {
+    display: none;
+    padding: 20px 0 0;
+    border: 1px solid #ddd;
+}
+
+#tsum-tabs input {
+    display: none;
+}
+
+#tsum-tabs label {
+    display: inline-block;
+    margin: 0 0 -1px;
+    padding: 15px 25px;
+    font-weight: 600;
+    text-align: center;
+    color: #bbb;
+    border: 1px solid transparent;
+}
+
+#tsum-tabs label:before {
+    font-family: fontawesome;
+    font-weight: normal;
+    margin-right: 10px;
+}
+
+#tsum-tabs label[for*='1']:before {
+    content: '\f14b';
+}
+
+#tsum-tabs label[for*='2']:before {
+    content: '\f058';
+}
+
+#tsum-tabs label[for*='3']:before {
+    content: '\f13e';
+}
+
+#tsum-tabs label:hover {
+    color: #888;
+    cursor: pointer;
+}
+
+#tsum-tabs input:checked+label {
+    color: #000;
+    border: 1px solid #ddd;
+    border-top: 2px solid orange;
+    border-bottom: 1px solid #fff;
+}
+
+#content1 p {
+    color: #000;
+}
+
+#content2 p {
+    color: #000;
+    margin-top: 10px;
+}
+
+#content3 ul li {
+    color: #000;
+    margin-top: 10px;
+    list-style-type: none;
+}
+
+#tsum-tabs #tab1:checked~#content1,
+#tsum-tabs #tab2:checked~#content2,
+#tsum-tabs #tab3:checked~#content3
+{
+    display: block;
+}
+
+@media screen and (max-width: 650px) {
+    #tsum-tabs label {
+        font-size: 0;
+    }
+
+    #tsum-tabs label:before {
+        margin: 0;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #tsum-tabs label {
+        padding: 15px;
+    }
+}
+
+
+/* cart */
+
+#cart-similar {
+    margin-top: 20px;
+}
+
+
+.similar-product {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}

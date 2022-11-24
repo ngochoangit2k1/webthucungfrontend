@@ -1,0 +1,33 @@
+#information {
+  overflow: hidden;
+  border-color: #30b5b2;
+}
+
+#information .information-img {
+  transition: all 1s;
+}
+
+#information .information-img:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+#information-body h5 {
+  color: #000;
+  text-transform: uppercase;
+}
+
+#information-body p {
+  color: #777;
+  text-transform: lowercase;
+}
+
+#information-body a {
+  background: none;
+  border: none;
+  color: pink;
+}
+
+#information-body a:hover {
+  color: red;
+}

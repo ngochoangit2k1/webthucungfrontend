@@ -1,0 +1,21 @@
+#bonus {
+  width: 98.4%;
+  min-height: 140px;
+  background-color: #30b5b2;
+  overflow: hidden;
+}
+
+#bonus .bonus-container img {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  padding-top: 24px;
+  margin-top: 23px;
+  margin-left: 24px;
+}
+
+#bonus .bonus-container h1 {
+  color: #fff;
+  font-size: 17px;
+  padding-top: 45px;
+}

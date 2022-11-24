@@ -1,0 +1,16 @@
+.carousel-content h5,
+p {
+  color: #fff;
+}
+
+.carousel-content {
+  margin-top: 74px;
+}
+
+.carousel-content input {
+  padding: 8px 84px;
+  background-color: #30b5b2;
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+}

@@ -1,0 +1,14 @@
+#title {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#title .title-dog {
+  color: #3c3451;
+  text-transform: uppercase;
+}
+
+#title .title-line {
+  width: 100px;
+  margin-bottom: 40px;
+}

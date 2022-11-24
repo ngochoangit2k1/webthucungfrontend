@@ -1,0 +1,90 @@
+.active {
+  color: green !important;
+}
+
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+#nav .logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 30%;
+}
+
+#nav-parents li {
+  padding: 0 18px !important;
+  font-size: 18px;
+  color: #fff;
+}
+
+#nav-parents li a {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+#nav-parents li a:hover {
+  color: #30b5b2;
+}
+
+.cart-icon {
+  font-size: 20px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.cart-quantity {
+  position: absolute;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  background-color: #30b5b2;
+  border-radius: 50%;
+}
+.cart-quantity b {
+  padding: 0px 8px;
+}
+
+#nav-search {
+  position: relative;
+}
+
+.search {
+  position: absolute;
+  background-color: #30b5b2;
+  left: -285px;
+  top: 36px;
+  padding: 16px 16px;
+  border-radius: 8px;
+  display: none;
+  z-index: 1;
+}
+
+.search .seach-input {
+  padding: 5px 100px;
+  border: none;
+  display: inline-block;
+  position: relative;
+  outline: none;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+}
+
+.search-btn {
+  position: absolute;
+  right: 27px;
+  top: 24px;
+  border: none;
+  background: none;
+  padding: 0 16px;
+  color: #30b5b2;
+}
+
+#nav-parents #nav-search:hover .search {
+  display: block;
+  transition: 0.1s;
+}

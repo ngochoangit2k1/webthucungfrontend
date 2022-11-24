@@ -1,0 +1,84 @@
+/* Reset CSS */
+* {
+  /*Emmet*/
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.hoverButton:hover {
+  opacity: 0.9;
+}
+
+
+/* Reset CSS */
+* {
+  /*Emmet*/
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.hoverButton:hover {
+  opacity: 0.9;
+}
+
+/*  */
+#list-product{
+  border: 1px solid #ccc;
+}
+
+#list-product li {
+  list-style-type: none;
+}
+
+#list-product .dog-shop {
+  margin-top: 16px;
+}
+#list-product .pet img {
+  width: 60px;
+  height: 60px;
+}
+
+#list-product .product-dog hr {
+  width: 90%;
+  text-align: center;
+}
+
+#list-product .pet-body p {
+  font-size: 15px;
+}
+
+.cart-img {
+  transition: 1s all;
+}
+
+.cart-img:hover {
+  -webkit-transform: scale(1.2);
+transform: scale(1.2);
+}
+
+#card {
+  position: relative;
+}
+
+.icon-plus {
+  position: absolute;
+  color: #ccc;
+  font-size: 30px;
+  top: 220px;
+  left: 30px;
+  display: none;
+  border-color: #ccc;
+}
+
+.icon-plus:hover {
+  color: #30b5b2;
+}
+
+#card .cart-header:hover .icon-plus {
+  display: block;
+}
+
+
+

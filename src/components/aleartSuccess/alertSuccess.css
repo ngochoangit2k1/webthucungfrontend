@@ -1,0 +1,9 @@
+.alertSuccess {
+    background-color: #999;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.hoverButton {
+    float: right;
+}
