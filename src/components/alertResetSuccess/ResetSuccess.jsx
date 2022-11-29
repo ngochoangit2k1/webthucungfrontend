@@ -10,7 +10,7 @@ const ResetSuccess = () => {
 
   useEffect(() => {
     const query = async () => {
-      await axios.post("http://localhost:8800/api/auth/reset-password", { id });
+      await axios.post("https://web-thu-cung.herokuapp.com/api/auth/reset-password", { id });
     };
     query();
   }, [id]);

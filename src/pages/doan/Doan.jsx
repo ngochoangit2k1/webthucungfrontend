@@ -13,14 +13,14 @@ const Doan = ({ axiosJWT }) => {
   const navigate = useNavigate();
 
   const logout = async () => {
-    await axios.post("http://localhost:8800/api/auth/logout");
+    await axios.post("https://web-thu-cung.herokuapp.com/api/auth/logout");
     dispatch({ type: "LOGOUT_SUCCESS", payload: window.localStorage.clear() });
     navigate("/login");
   };
   console.log(user);
   const handleClick = async () => {
     try {
-      const res = await axiosJWT.get("http://localhost:8800/api/users", {
+      const res = await axiosJWT.get("https://web-thu-cung.herokuapp.com/api/users", {
         headers: { Authorization: user.accessToken },
       });
       console.log(res.data);

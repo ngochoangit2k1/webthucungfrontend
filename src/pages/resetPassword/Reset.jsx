@@ -59,7 +59,7 @@ export default function Register() {
       } else {
         try {
           await axios.post(
-            "http://localhost:8800/api/auth/change-password",
+            "https://web-thu-cung.herokuapp.com/api/auth/change-password",
             user
           );
           navigate("/login");

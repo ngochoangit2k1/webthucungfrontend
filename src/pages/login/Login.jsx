@@ -30,7 +30,7 @@ export default function Login() {
     dispatch({ type: "LOGIN_START" });
     try {
       const res = await axios.post(
-        "http://localhost:8800/api/auth/login",
+        "https://web-thu-cung.herokuapp.com/api/auth/login",
         userInfo
       );
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });

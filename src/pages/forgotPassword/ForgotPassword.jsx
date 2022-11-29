@@ -19,7 +19,7 @@ export default function ForgotPassword() {
     };
     try {
       const res = await axios.post(
-        "http://localhost:8800/api/auth/reset-password",
+        "https://web-thu-cung.herokuapp.com/api/auth/reset-password",
         userInfo
       );
       setAuthEmail(true);

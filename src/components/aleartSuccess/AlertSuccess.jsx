@@ -10,7 +10,7 @@ const AlertSuccess = () => {
 
   useEffect(() => {
     const query = async () => {
-      await axios.post("http://localhost:8800/api/auth/register", {id});
+      await axios.post("https://web-thu-cung.herokuapp.com/api/auth/register", {id});
     };
     query();
   }, [id]);

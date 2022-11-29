@@ -40,7 +40,7 @@ function App() {
     axios.defaults.withCredentials = true;
     try {
       const res = await axios.post(
-        "http://localhost:8800/api/auth/refresh-token",
+        "https://web-thu-cung.herokuapp.com/api/auth/refresh-token",
         null,
         {
           withCredentials: true,
