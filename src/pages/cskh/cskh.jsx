@@ -22,7 +22,7 @@ const CSKH = () => {
   const DeleteInfo = (id, e) => {
     e.preventDefault();
     Axios.delete(
-      `https://web-thu-cung.herokuapp.com/information/infor/${id}`
+      `https://webthucungapi.onrender.com/information/infor/${id}`
     ).then((res) => {
       alert("Delete this id");
     });
@@ -30,7 +30,7 @@ const CSKH = () => {
   };
 
   const addInfor = () => {
-    Axios.post("https://web-thu-cung.herokuapp.com/information/infor", {
+    Axios.post("https://webthucungapi.onrender.com/information/infor", {
       Inforname: inforname,
       Inforphone: inforphone,
       Inforemail: inforemail,

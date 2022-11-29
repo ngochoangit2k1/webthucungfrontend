@@ -40,7 +40,7 @@ function App() {
     axios.defaults.withCredentials = true;
     try {
       const res = await axios.post(
-        "https://web-thu-cung.herokuapp.com/api/auth/refresh-token",
+        "https://webthucungapi.onrender.com/api/auth/refresh-token",
         null,
         {
           withCredentials: true,

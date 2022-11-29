@@ -7,7 +7,7 @@ export default function ProductDetailState({ children }) {
 
   useEffect(() => {
     axios
-      .get(`https://web-thu-cung.herokuapp.com/information/infor`)
+      .get(`https://webthucungapi.onrender.com/information/infor`)
       .then((datas) => setProduct(datas.data));
   }, []);
 

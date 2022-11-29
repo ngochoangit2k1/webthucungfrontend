@@ -112,7 +112,7 @@ export default function Register() {
         setSignupFailure(true);
       } else {
         try {
-          await axios.post("https://web-thu-cung.herokuapp.com/api/auth/register", user);
+          await axios.post("https://webthucungapi.onrender.com/api/auth/register", user);
           setAuthEmail(true);
         } catch (err) {
           registerModalError("lỗi");
