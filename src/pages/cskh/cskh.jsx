@@ -30,7 +30,7 @@ const CSKH = () => {
   };
 
   const addInfor = () => {
-    Axios.post("https://webthucungapi.onrender.com/information/infor", {
+    Axios.post("https://web-thu-cung.herokuapp.com/information/infor", {
       Inforname: inforname,
       Inforphone: inforphone,
       Inforemail: inforemail,
