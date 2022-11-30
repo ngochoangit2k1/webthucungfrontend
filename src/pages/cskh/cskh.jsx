@@ -38,8 +38,8 @@ const CSKH = () => {
     });
 
     setTimeout(()=>{
-      window.location.reload(false);
-  }, 500);
+      window.location.reload();
+  }, 1000);
 
     console.log("insert success");
   };
