@@ -37,7 +37,7 @@ const NavBar = () => {
               <ul id="nav-parents" className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
                   <Link
-                    to="/gioithieu"
+                    to="/"
                     className="nav-link"
                     aria-current="page"
                   >
@@ -95,10 +95,10 @@ const NavBar = () => {
                     <li>
                       <a
                         class="dropdown-item"
-                        href="#!"
+                        href="/login"
                         style={{ fontSize: "12px" }}
                       >
-                        <i className="ti-user"></i>
+                        <i className="ti-user"> Login</i>
                         {/* <span
                           style={{ color: "#00ffa8" }}
                         >{` ${user.username}`}</span> */}
@@ -107,10 +107,10 @@ const NavBar = () => {
                     <li>
                       <a
                         class="dropdown-item"
-                        href="#!"
+                        href="/register"
                         style={{ fontSize: "12px" }}
                       >
-                        <i className="ti-email"></i>
+                        <i className="ti-lock"> Register</i>
                         {/* <span
                           style={{ color: "#00ffa8" }}
                         >{` ${user.email}`}</span> */}
