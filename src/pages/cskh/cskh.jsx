@@ -26,6 +26,9 @@ const CSKH = () => {
     ).then((res) => {
       alert("Delete this id");
     });
+    setTimeout(()=>{
+      window.location.reload();
+  }, 1000);
     console.log("ok");
   };
 
