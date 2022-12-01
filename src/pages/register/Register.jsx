@@ -23,9 +23,9 @@ export default function Register() {
   // const password = useRef();
   // const confirmPassword = useRef();
   const navigate = useNavigate();
-  const handleChange = ({ currentTarget: input }) => {
-		setData({ ...data, [input.username]: input.value });
-	};
+  // const handleChange = ({ currentTarget: input }) => {
+	// 	setData({ ...data, [input.username]: input.value });
+	// };
   const handleSubmit = async (e) => {
 		e.preventDefault(); 
 		try {
