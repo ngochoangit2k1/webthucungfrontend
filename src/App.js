@@ -10,6 +10,7 @@ import ForgotPassword from "./pages/forgotPassword/ForgotPassword";
 import Reset from "./pages/resetPassword/Reset";
 import ResetSuccess from "./components/alertResetSuccess/ResetSuccess";
 import CSKH from "./pages/cskh/cskh";
+import CardProductCat from "./pages/dogAndcatPage/CardProductCat";
 // css HomePage
 
 import "./assets/css/NavBar.css";
@@ -84,6 +85,7 @@ function App() {
         <Route path="/reset-password" element={<ForgotPassword />} />
         <Route path="/reset/:id" element={<Reset />} />
         <Route path="/lienhe" element={<CSKH />} />
+        <Route path="/cart" element={<CardProductCat />} />
         <Route
           path="/register"
           element={user ? <Navigate to="/" /> : <Register />}

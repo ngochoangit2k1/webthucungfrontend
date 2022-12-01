@@ -7,13 +7,15 @@ import axios from "axios";
 import { AuthContext } from "../../context/AuthContext";
 import { CircularProgress } from "@mui/material";
 import LoginModal from "../../components/loginModal/LoginModal";
-
+import { loginStart, loginSuccess, loginFailure, logout } from "../../redux/userSlice"
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [loginFailure, setLoginFailure] = useState(false);
+  const [error, setError] = useState("");
+  const [username, setName] = useState("");
+  const [email, setEmail] = useState("");
 
-  const username = useRef();
-  const password = useRef();
+  const [password, setPassword] = useState("");
   const { user, dispatch, isFetching } = useContext(AuthContext);
   axios.defaults.withCredentials = true;
 
@@ -23,18 +25,21 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const userInfo = {
-      username: username.current.value,
-      password: password.current.value,
-    };
-    dispatch({ type: "LOGIN_START" });
+    dispatch(loginStart())
+    // const res = await axios.post("auth/signin", { username, password })
+    // dispatch(loginSuccess(res.data))
+    // console.log(res.data)
+    // e.replace("http://localhost:3001")
+
     try {
-      const res = await axios.post(
-        "https://webthucungapi.onrender.com/api/auth/login",
-        userInfo
-      );
+      const res = await axios.post("auth/signin", { username, password })
+      dispatch(loginSuccess(res.data))
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
-    } catch (err) {
+      console.log(res.data)
+      e.replaceState("http://localhost:3001")
+    } catch (error) {
+      setError(schema.email);
+      console.log(error)
       dispatch({ type: "LOGIN_FAILURE", payload: err });
       setLoginFailure(true);
     }
@@ -82,7 +87,7 @@ export default function Login() {
                     type="text"
                     placeholder="Enter your username"
                     required
-                    ref={username}
+                    onChange={e => setName(e.target.value)}
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -93,7 +98,7 @@ export default function Login() {
                       placeholder="Enter your password"
                       className="br-6 m-all-fsz s-all-fsz"
                       required
-                      ref={password}
+                      onChange={e => setPassword(e.target.value)}
                       style={{ height: "50px" }}
                     />
                     <div
@@ -125,6 +130,7 @@ export default function Login() {
                     backgroundColor: "#c38161",
                     border: "none",
                   }}
+                  onClick={handleSubmit}
                 >
                   Login
                 </Button>

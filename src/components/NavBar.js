@@ -3,13 +3,27 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/img/Logo.jpg";
 import { AuthContext } from "../context/AuthContext";
-
+import { useDispatch, useSelector } from "react-redux";
+import { loginStart, loginSuccess, loginFailure, logout } from "../redux/userSlice"
 const NavBar = () => {
-  // const { user, dispatch } = useContext(AuthContext);
+  const { user, dispatch } = useContext(AuthContext);
   // const logout = async () => {
   //   await axios.post("http://localhost:8800/api/auth/logout");
   //   dispatch({ type: "LOGOUT_SUCCESS", payload: window.localStorage.clear() });
   // };
+  // const { currentUser } = useSelector(state => state.user)
+  const handleLogout = async (e) => {
+    e.preventDefault();
+    dispatch(logout());
+    try {
+      localStorage.clear()
+      setTimeout(()=>{
+        window.location.reload();
+    }, 1000);
+    } catch (err) {
+      dispatch(loginFailure());
+    }
+  };
   return (
     <div>
       <div className="container-fluid" id="nav">
@@ -92,7 +106,20 @@ const NavBar = () => {
                     aria-labelledby="navbarDropdownMenuLink"
                     style={{ backgroundColor: "#4f4f4f" }}
                   >
-                    <li>
+                    
+                    {user ?(  <li >
+                      <a
+                        class="dropdown-item"
+                        href="/login"
+                        style={{ fontSize: "12px" }}
+                        onClick={handleLogout}
+                      >
+                        <i className="ti-share-alt" > Logout</i>
+                        {/* <span
+                          style={{ color: "#00ffa8" }}
+                        >{` ${user.email}`}</span> */}
+                      </a>
+                     </li>):(<li>
                       <a
                         class="dropdown-item"
                         href="/login"
@@ -103,19 +130,9 @@ const NavBar = () => {
                           style={{ color: "#00ffa8" }}
                         >{` ${user.username}`}</span> */}
                       </a>
-                    </li>
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        href="/register"
-                        style={{ fontSize: "12px" }}
-                      >
-                        <i className="ti-lock"> Register</i>
-                        {/* <span
-                          style={{ color: "#00ffa8" }}
-                        >{` ${user.email}`}</span> */}
-                      </a>
-                    </li>
+                     </li>)}
+                     
+                   
                     <li>
                       {/* <a onClick={logout} class="dropdown-item" href="#!">
                         <i

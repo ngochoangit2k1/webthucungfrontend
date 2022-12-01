@@ -12,19 +12,44 @@ export default function Register() {
   const [showPassword2, setShowPassword2] = useState(false);
   const [validatePassword, setValidatePassword] = useState(true);
   const [signupFailure, setSignupFailure] = useState(false);
-
+	const [error, setError] = useState("");
   const [authEmail, setAuthEmail] = useState(false);
+  const [username, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const username = useRef();
-  const email = useRef();
-  const password = useRef();
-  const confirmPassword = useRef();
+  // const username = useRef();
+  // const email = useRef();
+  // const password = useRef();
+  // const confirmPassword = useRef();
   const navigate = useNavigate();
+  const handleChange = ({ currentTarget: input }) => {
+		setData({ ...data, [input.username]: input.value });
+	};
+  const handleSubmit = async (e) => {
+		e.preventDefault(); 
+		try {
+			
+			const { data: res } = await axios.post("https://webthucungapi.onrender.com/api/auth/signup", {username , password , email});
+			navigate("/login");
+			console.log(data);
+		} catch (error) {
+			if (
+				error.response &&
+				error.response.status >= 400 &&
+				error.response.status <= 500
+			) {
+				setError(error.response.data.message);
+			}
+			console.log(error);
+		}
+	};
+  console.log(username);
   //allow "_ -, number, letter and no allow whitespace,@,$..."
   const usernameRegex = /^(?=.*[a-z])[a-z0-9_-]{7,19}$/i;
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   const passwordRegex =
-    /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,19}$/;
+  /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$/;
 
   const registerModalError = (err) => {
     if (err) {
@@ -90,36 +115,36 @@ export default function Register() {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (password.current.value !== confirmPassword.current.value) {
-      setValidatePassword(false);
-    } else {
-      setValidatePassword(true);
-      const user = {
-        email: email.current.value,
-        username: username.current.value,
-        password: password.current.value,
-      };
-      if (
-        !user.email === "" ||
-        !user.username === "" ||
-        !user.password === "" ||
-        !user.username.match(usernameRegex) ||
-        !user.email.match(emailRegex) ||
-        !user.password.match(passwordRegex)
-      ) {
-        setSignupFailure(true);
-      } else {
-        try {
-          await axios.post("https://webthucungapi.onrender.com/api/auth/register", user);
-          setAuthEmail(true);
-        } catch (err) {
-          registerModalError("lỗi");
-        }
-      }
-    }
-  };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (password.current.value !== confirmPassword.current.value) {
+  //     setValidatePassword(false);
+  //   } else {
+  //     setValidatePassword(true);
+  //     const user = {
+  //       email: email.current.value,
+  //       username: username.current.value,
+  //       password: password.current.value,
+  //     };
+  //     if (
+  //       !user.email === "" ||
+  //       !user.username === "" ||
+  //       !user.password === "" ||
+  //       !user.username.match(usernameRegex) ||
+  //       !user.email.match(emailRegex) ||
+  //       !user.password.match(passwordRegex)
+  //     ) {
+  //       setSignupFailure(true);
+  //     } else {
+  //       try {
+  //         await axios.post("http://localhost:8800/api/auth/signup", user);
+  //         setAuthEmail(true);
+  //       } catch (err) {
+  //         registerModalError("lỗi");
+  //       }
+  //     }
+  //   }
+  // };
 
   return (
     <div>
@@ -159,15 +184,19 @@ export default function Register() {
                 <Form.Group className="mb-3" controlId="formBasicUserName">
                   <Form.Label className="fw-b m-all-fsz">Username</Form.Label>
                   <input
+                  
                     type="text"
+                    name="username"
+                    onChange={e => setName(e.target.value)}
                     placeholder="Enter your username"
                     className="br-6 m-all-fsz s-all-fsz validate-input validate-input-username"
+                  
                     required
-                    ref={username}
-                    onInvalid={(e) => e.target.setCustomValidity("Remove")}
-                    onInput={(e) => e.target.setCustomValidity("")}
-                    onBlur={removeUsernameErrorMessage}
-                    pattern={usernameRegex}
+                   
+                    // onInvalid={(e) => e.target.setCustomValidity("Remove")}
+                    // onInput={(e) => e.target.setCustomValidity("")}
+                    // onBlur={removeUsernameErrorMessage}
+                    // pattern={usernameRegex}
                   />
                   <p
                     className="m-all-fsz error-message-username"
@@ -179,9 +208,11 @@ export default function Register() {
                   <input
                     className="br-6 m-all-fsz s-all-fsz validate-input"
                     type="email"
+                    name="email"
+                    onChange={e => setEmail(e.target.value)}
                     placeholder="Enter your email"
                     required
-                    ref={email}
+                    
                     onBlur={removeEmailErrorMessage}
                     pattern={emailRegex}
                   />
@@ -199,10 +230,12 @@ export default function Register() {
                       className={`br-6 m-all-fsz s-all-fsz validate-input validate-input-password
                       ${validatePassword ? "" : "error"}
                       `}
+                      name="password"
+                      onChange={e => setPassword(e.target.value)}
                       required
-                      ref={password}
-                      onBlur={removePasswordErrorMessage}
-                      pattern={passwordRegex}
+                     
+                      // onBlur={removePasswordErrorMessage}
+                      // pattern={passwordRegex}
                     />
                     <div
                       className="position-absolute"
@@ -226,7 +259,7 @@ export default function Register() {
                     ></p>
                   </InputGroup>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="confirmPassword">
+                {/* <Form.Group className="mb-3" controlId="confirmPassword">
                   <Form.Label className="fw-b m-all-fsz">
                     Confirm Password
                   </Form.Label>
@@ -265,7 +298,7 @@ export default function Register() {
                       ? ""
                       : "Mật khẩu và mật khẩu xác nhận không khớp."
                   }`}</p>
-                </Form.Group>
+                </Form.Group> */}
                 <Button
                   variant="dark"
                   type="submit"
