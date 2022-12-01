@@ -12,31 +12,31 @@ export default function ProductDetailState({ children }) {
 
   useEffect(() => {
     axios
-      .get(`https://web-thu-cung.herokuapp.com/pet/dogs`)
+      .get(`/pet/dogs`)
       .then((datas) => setDog(datas.data));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`https://web-thu-cung.herokuapp.com/pet/cats`)
+      .get(`/pet/cats`)
       .then((datas) => setCat(datas.data));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`https://web-thu-cung.herokuapp.com/pet/foods`)
+      .get(`/pet/foods`)
       .then((datas) => setFoods(datas.data));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`https://web-thu-cung.herokuapp.com/information/infor`)
+      .get(`/information/infor`)
       .then((datas) => setProduct(datas.data));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`https://web-thu-cung.herokuapp.com/pet/product-Phu-Kien`)
+      .get(`pet/product-Phu-Kien`)
       .then((datas) => setPKTT(datas.data));
   }, []);
   return (

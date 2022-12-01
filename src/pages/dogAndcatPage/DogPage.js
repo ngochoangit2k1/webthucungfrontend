@@ -14,14 +14,14 @@ export default function DogPage(props) {
 
   useEffect(() => {
     axios
-      .get(`https://web-thu-cung.herokuapp.com/pet/dogs`)
+      .get(`/pet/dogs`)
       .then((data) => setcardProductCat(data.data))
       .catch((err) => console.log(err + "call api error"));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`https://web-thu-cung.herokuapp.com/pet/product-Phu-Kien`)
+      .get(`/pet/product-Phu-Kien`)
       .then((data) => setcardProductPK(data.data))
       .catch((err) => console.log(err + "call api error"));
   }, []);

@@ -30,7 +30,7 @@ export default function Register() {
 		e.preventDefault(); 
 		try {
 			
-			const { data: res } = await axios.post("https://webthucungapi.onrender.com/api/auth/signup", {username , password , email});
+			const { data: res } = await axios.post("/api/auth/signup", {username , password , email});
 			navigate("/login");
 			console.log(data);
 		} catch (error) {
