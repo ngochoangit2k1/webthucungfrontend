@@ -1,17 +1,17 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Button, Container, Row, Col, Form, InputGroup } from "react-bootstrap";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import "./register.css";
 import axios from "axios";
-import RegisterModalError from "../../components/registerModalError/RegisterModalError";
+
 import RegisterModal from "../../components/registerModal/RegisterModal";
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [showPassword2, setShowPassword2] = useState(false);
   const [validatePassword, setValidatePassword] = useState(true);
-  const [signupFailure, setSignupFailure] = useState(false);
+  // const [signupFailure, setSignupFailure] = useState(false);
 	const [error, setError] = useState("");
   const [authEmail, setAuthEmail] = useState(false);
   const [username, setName] = useState("");
@@ -47,17 +47,11 @@ export default function Register() {
   console.log(username);
   //allow "_ -, number, letter and no allow whitespace,@,$..."
   const usernameRegex = /^(?=.*[a-z])[a-z0-9_-]{7,19}$/i;
-  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const passwordRegex =
   /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$/;
 
-  const registerModalError = (err) => {
-    if (err) {
-      setSignupFailure(true);
-    } else {
-      setSignupFailure(false);
-    }
-  };
+
 
   const hideOrShowPassword = () => {
     setShowPassword(!showPassword);
@@ -333,12 +327,7 @@ export default function Register() {
           </Col>
         </Row>
       </Container>
-      {signupFailure && (
-        <RegisterModalError
-          signupFailure={signupFailure}
-          setSignupFailure={setSignupFailure}
-        />
-      )}
+    
       {authEmail && (
         <RegisterModal authEmail={authEmail} setAuthEmail={setAuthEmail} />
       )}

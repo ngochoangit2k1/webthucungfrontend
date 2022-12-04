@@ -12,7 +12,7 @@ import ResetSuccess from "./components/alertResetSuccess/ResetSuccess";
 import CSKH from "./pages/cskh/cskh";
 import CardProductCat from "./pages/dogAndcatPage/CardProductCat";
 // css HomePage
-
+import React from "react";
 import "./assets/css/NavBar.css";
 import "./assets/css/Carousel.css";
 import "./assets/css/Bonus.css";
