@@ -2,11 +2,13 @@
   position: relative;
   margin-top: 20px;
   height: 70px;
+  display: flex;
+  justify-content: center;
 }
 
 #seemore .seemore-btn {
   position: absolute;
-  left: 50%;
+  
   width: 143px;
   height: 47px;
   text-transform: uppercase;

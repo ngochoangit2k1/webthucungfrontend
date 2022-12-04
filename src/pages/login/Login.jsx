@@ -38,9 +38,9 @@ export default function Login() {
       console.log(res.data)
       e.replaceState("http://localhost:3001")
     } catch (error) {
-      setError(schema.email);
+     
       console.log(error)
-      dispatch({ type: "LOGIN_FAILURE", payload: err });
+      dispatch({ type: "LOGIN_FAILURE", payload: error });
       setLoginFailure(true);
     }
   };

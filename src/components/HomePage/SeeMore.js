@@ -1,5 +1,8 @@
 import React from "react";
 
+
+
+
 const SeeMore = (props) => {
   return (
     <div className="container" id="seemore">
