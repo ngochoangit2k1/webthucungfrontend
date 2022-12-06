@@ -72,7 +72,7 @@ const PageBonus = () => {
       ))}
       <div className="container">
         <div className="row">
-          {ProductCat.map((listcat) => (
+          {Array.isArray(ProductCat)?ProductCat.map((listcat) => (
             <Cart
               key={listcat._id}
               productid={listcat._id}
@@ -81,7 +81,7 @@ const PageBonus = () => {
               title={listcat.title}
               price={listcat.price}
             />
-          ))}
+          )):null}
         </div>
       </div>
       <SeeMore />
