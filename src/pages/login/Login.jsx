@@ -32,7 +32,7 @@ export default function Login() {
     // e.replace("http://localhost:3001")
 
     try {
-      const res = await axios.post("/api/auth/signin", { username, password })
+      const res = await axios.post("https://webthucungapi.onrender.com/api/auth/signin", { username, password })
       dispatch(loginSuccess(res.data))
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       console.log(res.data)

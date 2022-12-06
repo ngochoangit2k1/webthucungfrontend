@@ -13,7 +13,7 @@ const Product = () => {
   useEffect(() => {
     axios
       .get(
-        `/pet/cart-product/products_by_id?id=${path}`
+        `https://webthucungapi.onrender.com/pet/cart-product/products_by_id?id=${path}`
       )
       .then((res) => {
         setCats(res.data.productDetail);
