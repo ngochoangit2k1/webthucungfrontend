@@ -53,7 +53,7 @@ const PageBonus = () => {
       ))}
       <div className="container">
         <div className="row">
-          {ProductDog.slice(0, limit).map((listdog) => (
+          {Array.isArray(ProductDog)?ProductDog.slice(0, limit).map((listdog) => (
             <Cart
               key={listdog._id}
               productid={listdog._id}
@@ -62,7 +62,7 @@ const PageBonus = () => {
               title={listdog.title}
               price={listdog.price}
             />
-          ))}
+          )):null}
         </div>
       </div>
       <SeeMore onClick={handleSeeMore} />
