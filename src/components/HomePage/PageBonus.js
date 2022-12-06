@@ -91,7 +91,7 @@ const PageBonus = () => {
       ))}
       <div className="container">
         <div className="row">
-          {ProductFood.map((listfood) => (
+          {Array.isArray(ProductFood)?ProductFood.map((listfood) => (
             <Cart
               key={listfood._id}
               productid={listfood._id}
@@ -100,7 +100,7 @@ const PageBonus = () => {
               title={listfood.title}
               price={listfood.price}
             />
-          ))}
+          )):null}
         </div>
       </div>
       <SeeMore />
@@ -109,14 +109,14 @@ const PageBonus = () => {
       ))}
       <div className="container">
         <div className="row">
-          {DataInformations.DataInformation.map((listInfor) => (
+          {Array.isArray(ProductFood)?DataInformations.DataInformation.map((listInfor) => (
             <Information
               key={listInfor.id}
               image={listInfor.image}
               title={listInfor.title}
               des={listInfor.des}
             />
-          ))}
+          )):null}
         </div>
       </div>
       <SeeMore />
