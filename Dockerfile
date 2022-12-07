@@ -1,17 +1,8 @@
 # build stage
-FROM node:14-alpine as build-stage
-RUN apk update && apk upgrade && \
-    apk add --no-cache bash git openssh
-
+FROM node:14-stretch-slim as build
 WORKDIR /app
-COPY ./package*.json ./
-RUN yarn
-COPY . .
-RUN yarn build
+COPY . /app
+RUN npm install && npm run build
 
-# production stage
-FROM nginx:stable-alpine as production-stage
-COPY --from=build-stage /app/build /usr/share/nginx/html
-EXPOSE 80
-COPY default.conf /etc/nginx/conf.d/
-CMD ["nginx", "-g", "daemon off;"]
+FROM nginx:latest
+COPY --from=build /app/build /usr/share/nginx/html
