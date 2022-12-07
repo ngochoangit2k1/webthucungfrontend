@@ -34,7 +34,7 @@ workflows:
   my-pipeline:
     jobs:
       - node/test
-      - build-push:
+      - build-and-push-image:
           requires:
             - node/test
           filters:
