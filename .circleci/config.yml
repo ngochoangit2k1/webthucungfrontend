@@ -8,7 +8,7 @@ orbs:
   docker: circleci/docker@1.4.0
 jobs:
   build-and-push:
-   environment:
+    environment:
       DOCKER_IMAGE: petshop1
       DOCKER_TAG: latest
     executor: docker/docker
