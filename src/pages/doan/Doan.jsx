@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-
+import  {Links} from "../../l";
 const Doan = ({ axiosJWT }) => {
   const { user, dispatch, isFetching } = useContext(AuthContext);
   const [error, setError] = useState("");
@@ -13,14 +13,14 @@ const Doan = ({ axiosJWT }) => {
   const navigate = useNavigate();
 
   const logout = async () => {
-    await axios.post("https://webthucungapi.onrender.com/api/auth/logout");
+    await axios.post(`${Links.links}api/auth/logout`);
     dispatch({ type: "LOGOUT_SUCCESS", payload: window.localStorage.clear() });
     navigate("/login");
   };
   console.log(user);
   const handleClick = async () => {
     try {
-      const res = await axiosJWT.get("https://webthucungapi.onrender.com/api/users", {
+      const res = await axiosJWT.get(`${Links.links}api/users`, {
         headers: { Authorization: user.accessToken },
       });
       console.log(res.data);

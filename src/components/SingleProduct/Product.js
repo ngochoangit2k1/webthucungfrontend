@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { ProductDetailContext } from "../HomePage/store/Context";
-
+import  {Links} from "../../l";
 const Product = () => {
   const { PKTT } = useContext(ProductDetailContext);
   const [cart, setCats] = useState([]);
@@ -13,7 +13,7 @@ const Product = () => {
   useEffect(() => {
     axios
       .get(
-        `https://webthucungapi.onrender.com/pet/cart-product/products_by_id?id=${path}`
+        `${Links.links}pet/cart-product/products_by_id?id=${path}`
       )
       .then((res) => {
         setCats(res.data.productDetail);

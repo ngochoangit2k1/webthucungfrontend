@@ -6,6 +6,7 @@ import "./forgotPassword.css";
 import axios from "axios";
 import { AuthContext } from "../../context/AuthContext";
 import RegisterModal from "../../components/registerModal/RegisterModal";
+import  {Links} from "../../l";
 
 export default function ForgotPassword() {
   const [authEmail, setAuthEmail] = useState(false);
@@ -19,7 +20,7 @@ export default function ForgotPassword() {
     };
     try {
       const res = await axios.post(
-        "https://webthucungapi.onrender.com/api/auth/reset-password",
+        `${Links.links}api/auth/reset-password`,
         userInfo
       );
       setAuthEmail(true);

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./CatPage.css";
-
+import  {Links} from "../../l";
 import Navbar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 
@@ -14,18 +14,18 @@ export default function DogPage(props) {
 
   useEffect(() => {
     axios
-      .get(`https://webthucungapi.onrender.com/pet/dogs`)
+      .get(`${Links.links}pet/dogs`)
       .then((data) => setcardProductCat(data.data))
       .catch((err) => console.log(err + "call api error"));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`https://webthucungapi.onrender.com/pet/product-Phu-Kien`)
+      .get(`${Links.links}pet/product-Phu-Kien`)
       .then((data) => setcardProductPK(data.data))
       .catch((err) => console.log(err + "call api error"));
   }, []);
-
+  console.log(Links.links)
   return (
     <>
       <Navbar />

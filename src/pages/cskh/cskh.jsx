@@ -8,6 +8,7 @@ import Carousel from "../../components/HomePage/Carousel";
 import anh1 from "../../assets/4.jpg";
 import Axios from "axios";
 import { ProductDetailContext } from "../../components/HomePage/store/Context";
+import  {Links} from "../../l";
 
 const CSKH = () => {
   const [inforname, setinforname] = useState("");
@@ -22,7 +23,7 @@ const CSKH = () => {
   const DeleteInfo = (id, e) => {
     e.preventDefault();
     Axios.delete(
-      `https://webthucungapi.onrender.com/information/infor/${id}`
+      `${Links.links}information/infor/${id}`
     ).then((res) => {
       alert("Delete this id");
     });

@@ -32,7 +32,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import ProductDetailState from "./components/HomePage/store/ProductDetail/ProductDetailState";
-
+import  {Links} from "./l";
 function App() {
   const { user, dispatch } = useContext(AuthContext);
   let axiosJWT = axios.create();
@@ -41,7 +41,7 @@ function App() {
     axios.defaults.withCredentials = true;
     try {
       const res = await axios.post(
-        "https://webthucungapi.onrender.com/api/auth/refresh-token",
+        `${Links.links}api/auth/refresh-token`,
         null,
         {
           withCredentials: true,

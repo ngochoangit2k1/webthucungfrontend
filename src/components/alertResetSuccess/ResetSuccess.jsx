@@ -3,6 +3,7 @@ import { Alert, Button, Container, Row } from "react-bootstrap";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import "./resetSuccess.css";
 import axios from "axios";
+import  {Links} from "../../l";
 
 const ResetSuccess = () => {
   const [searchParam, setSearchParams] = useSearchParams();
@@ -10,7 +11,7 @@ const ResetSuccess = () => {
 
   useEffect(() => {
     const query = async () => {
-      await axios.post("https://webthucungapi.onrender.com/api/auth/reset-password", { id });
+      await axios.post(`${Links.links}api/auth/reset-password`, { id });
     };
     query();
   }, [id]);

@@ -7,7 +7,8 @@ import axios from "axios";
 import { AuthContext } from "../../context/AuthContext";
 import { CircularProgress } from "@mui/material";
 import LoginModal from "../../components/loginModal/LoginModal";
-import { loginStart, loginSuccess, loginFailure, logout } from "../../redux/userSlice"
+import { loginStart, loginSuccess, loginFailure, logout } from "../../redux/userSlice";
+import  {Links} from "../../l";
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [loginFailure, setLoginFailure] = useState(false);
@@ -32,7 +33,7 @@ export default function Login() {
     // e.replace("http://localhost:3001")
 
     try {
-      const res = await axios.post("https://webthucungapi.onrender.com/api/auth/signin", { username, password })
+      const res = await axios.post(`${Links.links}api/auth/signin`, { username, password })
       dispatch(loginSuccess(res.data))
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       console.log(res.data)

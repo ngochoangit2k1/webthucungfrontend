@@ -4,7 +4,7 @@ import { FaEyeSlash, FaEye } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import "./register.css";
 import axios from "axios";
-
+import  {Links} from "../../l";
 import RegisterModal from "../../components/registerModal/RegisterModal";
 
 export default function Register() {
@@ -30,7 +30,7 @@ export default function Register() {
 		e.preventDefault(); 
 		try {
 			
-			const { data: res } = await axios.post("https://webthucungapi.onrender.com/api/auth/signup", {username , password , email});
+			const { data: res } = await axios.post(`${Links.links}api/auth/signup`, {username , password , email});
 			navigate("/login");
 			
 		} catch (error) {

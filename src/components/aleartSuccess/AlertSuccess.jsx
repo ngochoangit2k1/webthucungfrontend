@@ -3,14 +3,14 @@ import { Alert, Button, Container, Row } from "react-bootstrap";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import "./alertSuccess.css";
 import axios from "axios";
-
+import  {Links} from "../../l";
 const AlertSuccess = () => {
   const [searchParam, setSearchParams] = useSearchParams();
   const id = searchParam.get("id");
 
   useEffect(() => {
     const query = async () => {
-      await axios.post("https://webthucungapi.onrender.com/api/auth/register", {id});
+      await axios.post(`${Links.links}api/auth/register`, {id});
     };
     query();
   }, [id]);
