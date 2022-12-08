@@ -1,4 +1,10 @@
-echo 'start deploy=====>'
-docker pull registry.gitlab.com/petshop:latest:latest
-./run-internship-team1-dev.sh
-echo '=====>deploy success'
+#!/usr/bin/env bash
+
+cd `dirname $BASH_SOURCE`
+
+docker-compose stop
+docker-compose rm -f
+docker-compose pull
+docker-compose up -d
+
+cd - > /dev/null
